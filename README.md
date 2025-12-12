@@ -2,12 +2,12 @@
 
 A complete Python package for performing essential financial mathematics, including:
 
-- Time Value of Money  
-- Cash Flow Analysis  
-- Loan & Amortization Calculations  
-- Depreciation Methods  
-- Bond Valuation & Interest Rate Sensitivity  
-- Financial Visualizations  
+- Time Value of Money
+- Cash Flow Analysis
+- Loan & Amortization Calculations
+- Depreciation Methods
+- Bond Valuation & Interest Rate Sensitivity
+- Financial Visualizations
 
 This package is built entirely using numerical methods, algebra, and financial formulas — no machine learning.  
 Ideal for academic projects, finance learning, and professional analysis.
@@ -31,61 +31,66 @@ See full documentation and guidelines:
 
 ---
 
-
 ## 🚀 Features Overview
 
 ### ✔ 1. Time Value of Money (TVM)
-- Present Value (PV)  
-- Future Value (FV)  
-- Discount Factor  
-- Effective Annual Rate (EAR)  
-- Continuous compounding  
+
+- Present Value (PV)
+- Future Value (FV)
+- Discount Factor
+- Effective Annual Rate (EAR)
+- Continuous compounding
 - Net Present Value (NPV)
 
 ---
 
 ### ✔ 2. Cash Flow Analysis
-- Internal Rate of Return (IRR)  
-- Modified IRR (MIRR)  
-- Payback Period  
-- Discounted Payback Period  
-- Cumulative Cashflow  
-- Cashflow Diagrams  
+
+- Internal Rate of Return (IRR)
+- Modified IRR (MIRR)
+- Payback Period
+- Discounted Payback Period
+- Cumulative Cashflow
+- Cashflow Diagrams
 
 ---
 
 ### ✔ 3. Loan Calculations
-- Mortgage/loan payment (EMI)  
-- Amortization schedule  
-- Interest vs principal split  
-- Remaining balance  
+
+- Mortgage/loan payment (EMI)
+- Amortization schedule
+- Interest vs principal split
+- Remaining balance
 
 ---
 
 ### ✔ 4. Asset Depreciation
-- Straight-line depreciation  
-- Declining balance  
-- Double declining balance (DDB)  
-- Sum-of-years-digits (SYD)  
-- Book value tracking  
+
+- Straight-line depreciation
+- Declining balance
+- Double declining balance (DDB)
+- Sum-of-years-digits (SYD)
+- Book value tracking
 
 ---
 
 ### ✔ 5. Bond Valuation
-- Bond price  
-- Yield to Maturity (YTM)  
-- Duration  
-- Modified Duration  
-- Convexity  
+
+- Bond price
+- Yield to Maturity (YTM)
+- Duration
+- Modified Duration
+- Convexity
 
 ---
 
 ### ✔ 6. Visualization Tools
-- Cashflow bar plots  
-- Loan amortization graphs  
-- Depreciation curves  
-- NPV profile charts  
-- PV/FV growth curves  
+
+- Cashflow bar plots
+- Loan amortization graphs
+- Depreciation curves
+- NPV profile charts
+- PV/FV growth curves
 
 (Uses matplotlib)
 
@@ -93,14 +98,14 @@ See full documentation and guidelines:
 
 ## 📁 Project Structure
 
-```
-finanalytics/
+```ini
+finance-analytics-package/
 │── README.md
 │── setup.py
 │── requirements.txt
 │── examples/
 │   └── demo_examples.py
-└── modules/
+└── finalytics/
     ├── __init__.py
     ├── time_value.py
     ├── cashflow.py
@@ -115,19 +120,22 @@ finanalytics/
 ## 🔧 Installation
 
 ### Install dependencies
-```
+
+```sh
 pip install -r requirements.txt
 ```
 
 ### Install package locally
-```
+
+```sh
 pip install .
 ```
 
 ### Import in Python
+
 ```python
-import fincalc
-from fincalc import time_value, cashflow, loans, depreciation, bonds, visualization
+import finalytics
+from finalytics import time_value, cashflow, loans, depreciation, bonds, visualization
 ```
 
 ---
@@ -142,7 +150,7 @@ Full examples available in `examples/demo_examples.py`.
 ## 1️⃣ Time Value of Money
 
 ```python
-from fincalc import time_value
+from finalytics import time_value
 
 fv = time_value.future_value(1000, rate=0.08, years=5)
 pv = time_value.present_value(2000, rate=0.05, years=3)
@@ -155,11 +163,10 @@ print("NPV:", npv)
 
 ---
 
-
 ## 2️⃣ Cash Flow Analysis
 
 ```python
-from fincalc import cashflow
+from finalytics import cashflow
 
 cfs = [-1000, 300, 300, 300, 400]
 
@@ -175,8 +182,9 @@ print("Discounted Payback:", discounted_pb)
 ```
 
 ### Visualize cashflows
+
 ```python
-from fincalc import visualization as viz
+from finalytics import visualization as viz
 viz.plot_cashflows(cfs)
 ```
 
@@ -185,7 +193,7 @@ viz.plot_cashflows(cfs)
 ## 3️⃣ Loan Payment & Amortization
 
 ```python
-from fincalc import loans
+from finalytics import loans
 
 payment = loans.loan_payment(200000, annual_rate=0.05, years=30)
 schedule = loans.amortization_schedule(200000, 0.05, 30)
@@ -195,8 +203,9 @@ print("First Entry:", schedule[0])
 ```
 
 ### Plot amortization
+
 ```python
-from fincalc import visualization as viz
+from finalytics import visualization as viz
 viz.plot_amortization(schedule)
 ```
 
@@ -205,7 +214,7 @@ viz.plot_amortization(schedule)
 ## 4️⃣ Asset Depreciation
 
 ```python
-from fincalc import depreciation
+from finalytics import depreciation
 
 deps = depreciation.straight_line(10000, salvage=1000, life=5)
 ddb = depreciation.double_declining_balance(10000, life=5)
@@ -215,8 +224,9 @@ print("Double Declining Balance:", ddb)
 ```
 
 ### Plot depreciation
+
 ```python
-from fincalc import visualization as viz
+from finalytics import visualization as viz
 viz.plot_depreciation(deps)
 ```
 
@@ -225,7 +235,7 @@ viz.plot_depreciation(deps)
 ## 5️⃣ Bond Valuation
 
 ```python
-from fincalc import bonds
+from finalytics import bonds
 
 price = bonds.bond_price(1000, coupon_rate=0.05, yield_rate=0.06, years=10)
 ytm = bonds.yield_to_maturity(price, 1000, 0.05, 10)
@@ -243,9 +253,10 @@ print("Convexity:", convexity)
 # 📈 Visualization Examples
 
 ### NPV Profile
+
 ```python
 import numpy as np
-from fincalc import time_value, visualization as viz
+from finalytics import time_value, visualization as viz
 
 rates = np.linspace(0.01, 0.2, 20)
 cfs = [-1000, 300, 300, 300, 400]
@@ -256,21 +267,16 @@ viz.plot_npv_profile(rates, npvs)
 
 ---
 
-
-
-
-
-
 # 🧪 Testing
 
 Recommended tests:
 
-- PV/FV formula accuracy  
-- IRR convergence correctness  
-- Payback logic  
-- Amortization schedule correctness  
-- Depreciation totals  
-- Bond price vs yield monotonicity  
+- PV/FV formula accuracy
+- IRR convergence correctness
+- Payback logic
+- Amortization schedule correctness
+- Depreciation totals
+- Bond price vs yield monotonicity
 
 Unit tests can be added under a `tests/` folder.
 
@@ -279,22 +285,24 @@ Unit tests can be added under a `tests/` folder.
 # 📦 Build & Distribution
 
 Build distribution:
-```
+
+```sh
 python setup.py sdist bdist_wheel
 ```
 
 Install locally:
-```
-pip install dist/fincalc-0.1.0-py3-none-any.whl
+
+```sh
+pip install dist/finalytics-0.1.0-py3-none-any.whl
 ```
 
 ---
 
 ## 🛠 Technologies Used
 
-- Python 3.8+  
-- NumPy  
-- Matplotlib  
+- Python 3.8+
+- NumPy
+- Matplotlib
 
 ---
 
@@ -302,11 +310,11 @@ pip install dist/fincalc-0.1.0-py3-none-any.whl
 
 This toolkit replicates real-world financial analyst workflows for:
 
-- Investment return evaluation (IRR/NPV)  
-- Business project analysis  
-- Loan & mortgage planning  
-- Asset valuation & accounting  
-- Bond pricing & interest rate sensitivity  
+- Investment return evaluation (IRR/NPV)
+- Business project analysis
+- Loan & mortgage planning
+- Asset valuation & accounting
+- Bond pricing & interest rate sensitivity
 
 Mathematically rigorous yet easy to use — ideal for academic submission or personal finance automation.
 
@@ -317,7 +325,6 @@ Mathematically rigorous yet easy to use — ideal for academic submission or per
 MIT License
 
 ---
-
 
 # 🎉 Author
 
