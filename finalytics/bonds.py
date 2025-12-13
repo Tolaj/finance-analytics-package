@@ -1,10 +1,14 @@
+from typing import List
+from .time_value import net_present_value
+
+
 def bond_price(
-    face_value,
-    coupon_rate,
-    yield_rate,
-    years,
-    payments_per_year=1,
-):
+    face_value: float,
+    coupon_rate: float,
+    yield_rate: float,
+    years: float,
+    payments_per_year: int = 1,
+) -> float:
 
     n = int(years * payments_per_year)
     c = face_value * coupon_rate / payments_per_year
@@ -20,24 +24,25 @@ def bond_price(
 
 
 def yield_to_maturity(
-    price,
-    face_value,
-    coupon_rate,
-    years,
-    payments_per_year=1,
-    guess_low=0.0,
-    guess_high=1.0,
-    tol=1e-6,
-    max_iter=1000,
-):
+    price: float,
+    face_value: float,
+    coupon_rate: float,
+    years: float,
+    payments_per_year: int = 1,
+    guess_low: float = 0.0,
+    guess_high: float = 1.0,
+    tol: float = 1e-6,
+    max_iter: int = 1000,
+) -> float:
 
-    def price_for_yield(yield_rate: float):
+    def price_for_yield(yield_rate: float) -> float:
         return bond_price(face_value, coupon_rate, yield_rate, years, payments_per_year)
 
     low, high = guess_low, guess_high
     p_low = price_for_yield(low)
     p_high = price_for_yield(high)
 
+    # We want price(y) - market_price = 0
     f_low = p_low - price
     f_high = p_high - price
 
@@ -65,7 +70,9 @@ def yield_to_maturity(
     return (low + high) / 2.0
 
 
-def _bond_cashflows(face_value, coupon_rate, years, payments_per_year):
+def _bond_cashflows(
+    face_value: float, coupon_rate: float, years: float, payments_per_year: int
+) -> list:
     n = int(years * payments_per_year)
     c = face_value * coupon_rate / payments_per_year
     cfs = [c] * n
@@ -74,12 +81,12 @@ def _bond_cashflows(face_value, coupon_rate, years, payments_per_year):
 
 
 def duration(
-    face_value,
-    coupon_rate,
-    yield_rate,
-    years,
-    payments_per_year=1,
-):
+    face_value: float,
+    coupon_rate: float,
+    yield_rate: float,
+    years: float,
+    payments_per_year: int = 1,
+) -> float:
 
     n = int(years * payments_per_year)
     y = yield_rate / payments_per_year
@@ -100,12 +107,12 @@ def duration(
 
 
 def modified_duration(
-    face_value,
-    coupon_rate,
-    yield_rate,
-    years,
-    payments_per_year=1,
-):
+    face_value: float,
+    coupon_rate: float,
+    yield_rate: float,
+    years: float,
+    payments_per_year: int = 1,
+) -> float:
 
     D = duration(face_value, coupon_rate, yield_rate, years, payments_per_year)
     y = yield_rate / payments_per_year
@@ -113,12 +120,12 @@ def modified_duration(
 
 
 def convexity(
-    face_value,
-    coupon_rate,
-    yield_rate,
-    years,
-    payments_per_year=1,
-):
+    face_value: float,
+    coupon_rate: float,
+    yield_rate: float,
+    years: float,
+    payments_per_year: int = 1,
+) -> float:
 
     n = int(years * payments_per_year)
     y = yield_rate / payments_per_year
