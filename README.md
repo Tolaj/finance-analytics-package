@@ -2,12 +2,12 @@
 
 A complete Python package for performing essential financial mathematics, including:
 
-- Time Value of Money  
-- Cash Flow Analysis  
-- Loan & Amortization Calculations  
-- Depreciation Methods  
-- Bond Valuation & Interest Rate Sensitivity  
-- Financial Visualizations  
+- Time Value of Money
+- Cash Flow Analysis
+- Loan & Amortization Calculations
+- Depreciation Methods
+- Bond Valuation & Interest Rate Sensitivity
+- Financial Visualizations
 
 This package is built entirely using numerical methods, algebra, and financial formulas — no machine learning.  
 Ideal for academic projects, finance learning, and professional analysis.
@@ -31,61 +31,68 @@ See full documentation and guidelines:
 
 ---
 
-
 ## 🚀 Features Overview
 
 ### ✔ 1. Time Value of Money (TVM)
-- Present Value (PV)  
-- Future Value (FV)  
-- Discount Factor  
-- Effective Annual Rate (EAR)  
-- Continuous compounding  
-- Net Present Value (NPV)
+
+This module answers: “How does money change over time because of interest?”
+
+- Present Value (PV) : Tells you how much money you need today to get a certain amount in the future.
+- Future Value (FV) : Tells you how much money you will have in the future if you invest some money today.
+- Discount Factor : Gives a number that converts future money into today’s value.
+- Effective Annual Rate (EAR) : Finds the true yearly interest rate when interest compounds many times.
+- Continuous compounding :  
+- Net Present Value (NPV) : Adds all cashflows (past + future) into one value today.
 
 ---
 
 ### ✔ 2. Cash Flow Analysis
-- Internal Rate of Return (IRR)  
-- Modified IRR (MIRR)  
-- Payback Period  
-- Discounted Payback Period  
-- Cumulative Cashflow  
-- Cashflow Diagrams  
+
+- Internal Rate of Return (IRR) : Finds the return percentage of an investment
+- Modified IRR (MIRR) : A more realistic version of IRR that assumes:
+- Payback Period : Tells you how long it takes to get your original money back.
+- Discounted Payback Period : Same as payback period, but considers time value of money.
+- Cumulative Cashflow : 
+- Cashflow Diagrams
 
 ---
 
 ### ✔ 3. Loan Calculations
-- Mortgage/loan payment (EMI)  
-- Amortization schedule  
-- Interest vs principal split  
-- Remaining balance  
+
+- Mortgage/loan payment (EMI)
+- Amortization schedule
+- Interest vs principal split
+- Remaining balance
 
 ---
 
 ### ✔ 4. Asset Depreciation
-- Straight-line depreciation  
-- Declining balance  
-- Double declining balance (DDB)  
-- Sum-of-years-digits (SYD)  
-- Book value tracking  
+
+- Straight-line depreciation
+- Declining balance
+- Double declining balance (DDB)
+- Sum-of-years-digits (SYD)
+- Book value tracking
 
 ---
 
 ### ✔ 5. Bond Valuation
-- Bond price  
-- Yield to Maturity (YTM)  
-- Duration  
-- Modified Duration  
-- Convexity  
+
+- Bond price
+- Yield to Maturity (YTM)
+- Duration
+- Modified Duration
+- Convexity
 
 ---
 
 ### ✔ 6. Visualization Tools
-- Cashflow bar plots  
-- Loan amortization graphs  
-- Depreciation curves  
-- NPV profile charts  
-- PV/FV growth curves  
+
+- Cashflow bar plots
+- Loan amortization graphs
+- Depreciation curves
+- NPV profile charts
+- PV/FV growth curves
 
 (Uses matplotlib)
 
@@ -93,7 +100,7 @@ See full documentation and guidelines:
 
 ## 📁 Project Structure
 
-```
+```ini
 fincalc_project/
 │── README.md
 │── setup.py
@@ -115,16 +122,19 @@ fincalc_project/
 ## 🔧 Installation
 
 ### Install dependencies
-```
+
+```sh
 pip install -r requirements.txt
 ```
 
 ### Install package locally
-```
+
+```sh
 pip install .
 ```
 
 ### Import in Python
+
 ```python
 import fincalc
 from fincalc import time_value, cashflow, loans, depreciation, bonds, visualization
@@ -155,7 +165,6 @@ print("NPV:", npv)
 
 ---
 
-
 ## 2️⃣ Cash Flow Analysis
 
 ```python
@@ -175,6 +184,7 @@ print("Discounted Payback:", discounted_pb)
 ```
 
 ### Visualize cashflows
+
 ```python
 from fincalc import visualization as viz
 viz.plot_cashflows(cfs)
@@ -195,6 +205,7 @@ print("First Entry:", schedule[0])
 ```
 
 ### Plot amortization
+
 ```python
 from fincalc import visualization as viz
 viz.plot_amortization(schedule)
@@ -215,6 +226,7 @@ print("Double Declining Balance:", ddb)
 ```
 
 ### Plot depreciation
+
 ```python
 from fincalc import visualization as viz
 viz.plot_depreciation(deps)
@@ -243,6 +255,7 @@ print("Convexity:", convexity)
 # 📈 Visualization Examples
 
 ### NPV Profile
+
 ```python
 import numpy as np
 from fincalc import time_value, visualization as viz
@@ -256,21 +269,16 @@ viz.plot_npv_profile(rates, npvs)
 
 ---
 
-
-
-
-
-
 # 🧪 Testing
 
 Recommended tests:
 
-- PV/FV formula accuracy  
-- IRR convergence correctness  
-- Payback logic  
-- Amortization schedule correctness  
-- Depreciation totals  
-- Bond price vs yield monotonicity  
+- PV/FV formula accuracy
+- IRR convergence correctness
+- Payback logic
+- Amortization schedule correctness
+- Depreciation totals
+- Bond price vs yield monotonicity
 
 Unit tests can be added under a `tests/` folder.
 
@@ -279,12 +287,14 @@ Unit tests can be added under a `tests/` folder.
 # 📦 Build & Distribution
 
 Build distribution:
-```
+
+```sh
 python setup.py sdist bdist_wheel
 ```
 
 Install locally:
-```
+
+```sh
 pip install dist/fincalc-0.1.0-py3-none-any.whl
 ```
 
@@ -292,9 +302,9 @@ pip install dist/fincalc-0.1.0-py3-none-any.whl
 
 ## 🛠 Technologies Used
 
-- Python 3.8+  
-- NumPy  
-- Matplotlib  
+- Python 3.8+
+- NumPy
+- Matplotlib
 
 ---
 
@@ -302,11 +312,11 @@ pip install dist/fincalc-0.1.0-py3-none-any.whl
 
 This toolkit replicates real-world financial analyst workflows for:
 
-- Investment return evaluation (IRR/NPV)  
-- Business project analysis  
-- Loan & mortgage planning  
-- Asset valuation & accounting  
-- Bond pricing & interest rate sensitivity  
+- Investment return evaluation (IRR/NPV)
+- Business project analysis
+- Loan & mortgage planning
+- Asset valuation & accounting
+- Bond pricing & interest rate sensitivity
 
 Mathematically rigorous yet easy to use — ideal for academic submission or personal finance automation.
 
@@ -317,7 +327,6 @@ Mathematically rigorous yet easy to use — ideal for academic submission or per
 MIT License
 
 ---
-
 
 # 🎉 Author
 
