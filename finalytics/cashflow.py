@@ -34,7 +34,6 @@ def internal_rate_of_return(
             low = mid
             npv_low = npv_mid
 
-    # If we exit loop, return midpoint as approximation
     return (low + high) / 2.0
 
 
