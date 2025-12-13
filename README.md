@@ -32,50 +32,25 @@ See full documentation and guidelines:
 ---
 
 
-
-## 🔧 Installation
-
-### Install dependencies
-
-```sh
-pip install -r requirements.txt
-```
-
-### Install package locally
-
-```sh
-pip install .
-```
-
-### Import in Python
-
-```python
-import finalytics
-from finalytics import time_value, cashflow, loans, depreciation, bonds, visualization
-```
----
-
 ## 🚀 Features Overview
 
 ### ✔ 1. Time Value of Money (TVM)
-
-- Present Value (PV)
-- Future Value (FV)
-- Discount Factor
-- Effective Annual Rate (EAR)
-- Continuous compounding
+- Present Value (PV)  
+- Future Value (FV)  
+- Discount Factor  
+- Effective Annual Rate (EAR)  
+- Continuous compounding  
 - Net Present Value (NPV)
 
 ---
 
 ### ✔ 2. Cash Flow Analysis
-
-- Internal Rate of Return (IRR)
-- Modified IRR (MIRR)
-- Payback Period
-- Discounted Payback Period
-- Cumulative Cashflow
-- Cashflow Diagrams
+- Internal Rate of Return (IRR)  
+- Modified IRR (MIRR)  
+- Payback Period  
+- Discounted Payback Period  
+- Cumulative Cashflow  
+- Cashflow Diagrams  
 
 ---
 
@@ -122,8 +97,8 @@ from finalytics import time_value, cashflow, loans, depreciation, bonds, visuali
 
 ## 📁 Project Structure
 
-```ini
-finance-analytics-package/
+```
+fincalc_project/
 │── README.md
 │── setup.py
 │── requirements.txt
@@ -139,6 +114,25 @@ finance-analytics-package/
     └── visualization.py
 ```
 
+---
+
+## 🔧 Installation
+
+### Install dependencies
+```
+pip install -r requirements.txt
+```
+
+### Install package locally
+```
+pip install .
+```
+
+### Import in Python
+```python
+import fincalc
+from fincalc import time_value, cashflow, loans, depreciation, bonds, visualization
+```
 
 ---
 
@@ -293,9 +287,8 @@ python setup.py sdist bdist_wheel
 ```
 
 Install locally:
-
-```sh
-pip install dist/finalytics-0.1.0-py3-none-any.whl
+```
+pip install dist/fincalc-0.1.0-py3-none-any.whl
 ```
 
 ---
